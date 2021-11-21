@@ -7,6 +7,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const postRoutes = require('./routes/posts');
+const userRoutes = require('./routes/users');
 
 const app = express();
 app.use(cors({
@@ -24,6 +25,7 @@ app.use(express.urlencoded({
 }));
 
 app.use('/posts', postRoutes);
+app.use('/users', userRoutes);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT || 5000;
